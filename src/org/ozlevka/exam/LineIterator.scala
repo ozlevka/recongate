@@ -10,12 +10,12 @@ import scala.io.Source
 /**
   * Created by ozlevka on 3/2/17.
   */
-class LineIterator(it: Iterator[String], dest: File) {
+class LineIterator(it: Iterator[String], dest: File, wordDelimiter: String) {
   var wordsCount = collection.immutable.HashMap[String, Int]()
 
   def iterate(): Unit = {
     it foreach(line => {
-      val counted = new WordCounter(line reverse, ",")
+      val counted = new WordCounter(line reverse, wordDelimiter)
       this.mergeMap(counted.countedWords)
       this.append(line)
     })

@@ -12,11 +12,11 @@ import scala.io.Source
 object Main {
 
   def main(args: Array[String])  {
-    val file = new File("/home/ozlevka/newdata/Vipers_OK.csv")
-    val reverseFile = new File("/home/ozlevka/newdata/Vipers_OK.reverse")
+    val file = new File(args(0))
+    val reverseFile = new File(args(1))
     val it = Source.fromFile(file, "UTF-8").getLines
 
-    val my_iterator = new LineIterator(it, reverseFile)
+    val my_iterator = new LineIterator(it, reverseFile, args(2))
     my_iterator.iterate()
     val top = my_iterator.getTop5
 
