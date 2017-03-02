@@ -1,4 +1,4 @@
-# Exam in scala for recongate
+# Scala exam in for recongate
 
 1. Write a program in Scala that takes a text file, reverse it and also calculate the 5 most frequent (reversed) words in the text.
 2. The assumption is that the file cannot fit in memory.
